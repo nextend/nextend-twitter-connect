@@ -213,7 +213,7 @@ function new_twitter_login_action() {
           wp_set_auth_cookie($ID, true, $secure_cookie);
           $user_info = get_userdata($ID);
           do_action('wp_login', $user_info->user_login, $user_info);
-          update_user_meta($ID, 'twitter_profile_picture', $resp->profile_image_url);
+          update_user_meta($ID, 'twitter_profile_picture', $resp->profile_image_url_https);
           do_action('nextend_twitter_user_logged_in', $ID, $resp, $tmhOAuth);
         }
       } else {
